@@ -15,7 +15,7 @@ import useStyles from './styles';
 //   { id: 3, name: 'Baju', description: 'Baju olahraga', price: 'Rp.800', image: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/99d875fa-6e94-4f16-8dbc-9d53159baed8/essential-running-jacket-kXPK33.png' },
 // ];
 
-function Products({ products }) {
+function Products({ products, onAddToCart }) {
   const classes = useStyles();
   return (
     <main className={classes.content}>
@@ -23,7 +23,7 @@ function Products({ products }) {
       <Grid container justify="center" spacing={4}>
         {products.map((product) => (
           <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}>
-            <Product product={product} />
+            <Product product={product} onAddToCart={onAddToCart} />
           </Grid>
         ))}
       </Grid>

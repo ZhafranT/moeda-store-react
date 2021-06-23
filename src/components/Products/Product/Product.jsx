@@ -5,7 +5,7 @@ import { AddShoppingCart } from '@material-ui/icons';
 import useStyles from './styles';
 // import { Products } from '@chec/commerce.js/features/products';
 
-function Product({ product }) {
+function Product({ product, onAddToCart }) {
   const classes = useStyles();
 
   return (
@@ -21,7 +21,7 @@ function Product({ product }) {
         <Typography dangerouslySetInnerHTML={{ __html: product.description }} color="textSecondary" />
       </CardContent>
       <CardActions disableSpacing className={classes.cardActions}>
-        <IconButton arial-label="Add to Cart">
+        <IconButton arial-label="Add to Cart" onClick={() => onAddToCart(product.id, 1)}>
           <AddShoppingCart />
         </IconButton>
       </CardActions>
